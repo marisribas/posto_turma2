@@ -1,0 +1,2151 @@
+{
+  "auditlogquery": {
+    "customId": "auditlogquery",
+    "queryName": "Auditoria em Log",
+    "sourceType": "entityFullName",
+    "baseEntity": null,
+    "blockly": null,
+    "entitySimpleName": "AuditLog",
+    "entityFullName": "app.entity.AuditLog",
+    "query": {
+      "isValid": true,
+      "rulesEntity": [
+        {
+          "entity": "AuditLog",
+          "alias": "a",
+          "namespace": "app.entity.AuditLog"
+        }
+      ],
+      "rulesSelect": [
+        {
+          "func": "get",
+          "field": "a"
+        }
+      ],
+      "rulesGroupBy": [],
+      "rulesHaving": [],
+      "rulesOrderBy": [],
+      "rules": {
+        "condition": "AND",
+        "not": false,
+        "valid": true,
+        "rules": []
+      }
+    },
+    "queryParamsValues": [],
+    "verbs": {
+      "GET": false,
+      "GETAuthorities": null,
+      "POST": false,
+      "POSTAuthorities": null,
+      "PUT": false,
+      "PUTAuthorities": null,
+      "DELETE": false,
+      "DELETEAuthorities": null,
+      "FILTER": false,
+      "FILTERAuthorities": null,
+      "COUNT": false,
+      "COUNTAuthorities": null
+    },
+    "events": {
+      "beforeInsert": null,
+      "beforeUpdate": null,
+      "beforeDelete": null,
+      "afterInsert": null,
+      "afterUpdate": null,
+      "afterDelete": null,
+      "onNavigate": null,
+      "onGetData": null
+    },
+    "defaultValues": {
+      "id": null,
+      "type": null,
+      "command": null,
+      "date": null,
+      "objectData": null,
+      "user": null,
+      "host": null,
+      "agent": null,
+      "server": null,
+      "affectedFields": null
+    },
+    "defaultValuesProperties": {
+      "id": null,
+      "type": null,
+      "command": null,
+      "date": null,
+      "objectData": null,
+      "user": null,
+      "host": null,
+      "agent": null,
+      "server": null,
+      "affectedFields": null
+    },
+    "security": {
+      "id": null,
+      "type": null,
+      "command": null,
+      "date": null,
+      "objectData": null,
+      "user": null,
+      "host": null,
+      "agent": null,
+      "server": null,
+      "affectedFields": null
+    },
+    "calcFields": {},
+    "calcFieldsSecurity": {},
+    "calcFieldsProperties": {},
+    "errorHandles": {
+      "primaryKey": null,
+      "foreignKey": null
+    },
+    "serviceUrl": "api/cronapi/odata/v2/app/auditlogquery/",
+    "audit": false
+  },
+  "userSecurables": {
+    "customId": "userSecurables",
+    "queryName": "Obter Autorizações do Usuário",
+    "sourceType": "entityFullName",
+    "baseEntity": null,
+    "blockly": null,
+    "entitySimpleName": "UserSecurable",
+    "entityFullName": "app.entity.UserSecurable",
+    "query": {
+      "isValid": true,
+      "isEmpty": false,
+      "operationType": "object",
+      "type": "select",
+      "rulesEntity": [
+        {
+          "entity": "UserSecurable",
+          "namespace": "app.entity.UserSecurable",
+          "alias": "u"
+        }
+      ],
+      "rulesSelect": [
+        {
+          "func": "get",
+          "field": "u.securable",
+          "type": "string"
+        }
+      ],
+      "rulesGroupBy": [],
+      "rulesHaving": [],
+      "rulesOrderBy": [],
+      "rules": {
+        "condition": "AND",
+        "rules": [
+          {
+            "id": "u.user.normalizedUserName",
+            "field": "u.user.normalizedUserName",
+            "type": "string",
+            "input": "text",
+            "operator": "equal",
+            "value": ":login",
+            "valueIsField": false
+          }
+        ],
+        "not": false,
+        "valid": true
+      },
+      "isRawSql": false,
+      "multiTenant": false,
+      "paginatorAutomatic": false,
+      "pagination": false
+    },
+    "queryParamsValues": [
+      {
+        "fieldName": "login",
+        "fieldValue": ""
+      }
+    ],
+    "verbs": {
+      "GET": false,
+      "GETAuthorities": null,
+      "POST": false,
+      "POSTAuthorities": null,
+      "PUT": false,
+      "PUTAuthorities": null,
+      "DELETE": false,
+      "DELETEAuthorities": null,
+      "FILTER": true,
+      "FILTERAuthorities": null,
+      "COUNT": true,
+      "COUNTAuthorities": null
+    },
+    "events": {
+      "beforeInsert": null,
+      "beforeUpdate": null,
+      "beforeDelete": null,
+      "afterInsert": null,
+      "afterUpdate": null,
+      "afterDelete": null,
+      "onNavigate": null,
+      "onGetData": null
+    },
+    "defaultValues": {
+      "id": null,
+      "securable": null,
+      "user": null
+    },
+    "defaultValuesProperties": {
+      "id": null,
+      "securable": null,
+      "user": null
+    },
+    "security": {
+      "id": null,
+      "securable": null,
+      "user": null
+    },
+    "calcFields": {},
+    "calcFieldsSecurity": {},
+    "calcFieldsProperties": {},
+    "errorHandles": {
+      "primaryKey": null,
+      "foreignKey": null
+    },
+    "serviceUrl": "api/cronapi/odata/v2/app/userSecurables/",
+    "audit": false
+  },
+  "roleSecurables": {
+    "customId": "roleSecurables",
+    "queryName": "Obter Autorizações do Papel",
+    "sourceType": "entityFullName",
+    "baseEntity": null,
+    "blockly": null,
+    "entitySimpleName": "RoleSecurable",
+    "entityFullName": "app.entity.RoleSecurable",
+    "query": {
+      "isValid": true,
+      "isEmpty": false,
+      "operationType": "object",
+      "type": "select",
+      "rulesEntity": [
+        {
+          "entity": "RoleSecurable",
+          "namespace": "app.entity.RoleSecurable",
+          "alias": "r"
+        }
+      ],
+      "rulesSelect": [
+        {
+          "func": "get",
+          "field": "r.securable",
+          "type": "string"
+        }
+      ],
+      "rulesGroupBy": [],
+      "rulesHaving": [],
+      "rulesOrderBy": [],
+      "rules": {
+        "condition": "AND",
+        "rules": [
+          {
+            "id": "r.role.normalizedName",
+            "field": "r.role.normalizedName",
+            "type": "string",
+            "input": "text",
+            "operator": "equal",
+            "value": ":role",
+            "valueIsField": false
+          }
+        ],
+        "not": false,
+        "valid": true
+      },
+      "isRawSql": false,
+      "multiTenant": false,
+      "paginatorAutomatic": false,
+      "pagination": false
+    },
+    "queryParamsValues": [
+      {
+        "fieldName": "role",
+        "fieldValue": ""
+      }
+    ],
+    "verbs": {
+      "GET": false,
+      "GETAuthorities": null,
+      "POST": false,
+      "POSTAuthorities": null,
+      "PUT": false,
+      "PUTAuthorities": null,
+      "DELETE": false,
+      "DELETEAuthorities": null,
+      "FILTER": true,
+      "FILTERAuthorities": null,
+      "COUNT": true,
+      "COUNTAuthorities": null
+    },
+    "events": {
+      "beforeInsert": null,
+      "beforeUpdate": null,
+      "beforeDelete": null,
+      "afterInsert": null,
+      "afterUpdate": null,
+      "afterDelete": null,
+      "onNavigate": null,
+      "onGetData": null
+    },
+    "defaultValues": {
+      "id": null,
+      "role": null,
+      "securable": null
+    },
+    "defaultValuesProperties": {
+      "id": null,
+      "role": null,
+      "securable": null
+    },
+    "security": {
+      "id": null,
+      "role": null,
+      "securable": null
+    },
+    "calcFields": {},
+    "calcFieldsSecurity": {},
+    "calcFieldsProperties": {},
+    "errorHandles": {
+      "primaryKey": null,
+      "foreignKey": null
+    },
+    "serviceUrl": "api/cronapi/odata/v2/app/roleSecurables/"
+  },
+  "securables": {
+    "customId": "securables",
+    "queryName": "Securables",
+    "sourceType": "entityFullName",
+    "baseEntity": null,
+    "blockly": null,
+    "entitySimpleName": "Securable",
+    "entityFullName": "app.entity.Securable",
+    "query": {
+      "isValid": true,
+      "isEmpty": false,
+      "operationType": "object",
+      "type": "select",
+      "rulesEntity": [
+        {
+          "entity": "Securable",
+          "namespace": "app.entity.Securable",
+          "alias": "s"
+        }
+      ],
+      "rulesSelect": [
+        {
+          "func": "get",
+          "field": "s",
+          "type": "string"
+        }
+      ],
+      "rulesGroupBy": [],
+      "rulesHaving": [],
+      "rulesOrderBy": [],
+      "rules": {
+        "condition": "AND",
+        "rules": [
+          {
+            "id": "s.name",
+            "field": "s.name",
+            "type": "string",
+            "input": "text",
+            "operator": "equal",
+            "value": ":name",
+            "valueIsField": false
+          }
+        ],
+        "not": false,
+        "valid": true
+      },
+      "isRawSql": false,
+      "multiTenant": false,
+      "paginatorAutomatic": false,
+      "pagination": false
+    },
+    "queryParamsValues": [
+      {
+        "fieldName": "name",
+        "fieldValue": ""
+      }
+    ],
+    "verbs": {
+      "GET": true,
+      "GETAuthorities": null,
+      "POST": true,
+      "POSTAuthorities": null,
+      "PUT": true,
+      "PUTAuthorities": null,
+      "DELETE": true,
+      "DELETEAuthorities": null,
+      "FILTER": true,
+      "FILTERAuthorities": null,
+      "COUNT": true,
+      "COUNTAuthorities": null
+    },
+    "events": {
+      "beforeInsert": null,
+      "beforeUpdate": null,
+      "beforeDelete": null,
+      "afterInsert": null,
+      "afterUpdate": null,
+      "afterDelete": null,
+      "onNavigate": null,
+      "onGetData": null,
+      "onError": null
+    },
+    "defaultValues": {
+      "id": null,
+      "name": null
+    },
+    "defaultValuesProperties": {
+      "id": null,
+      "name": null
+    },
+    "security": {
+      "id": null,
+      "name": null
+    },
+    "calcFields": {},
+    "calcFieldsSecurity": {},
+    "calcFieldsProperties": {},
+    "errorHandles": {
+      "primaryKey": null,
+      "foreignKey": null
+    },
+    "serviceUrl": "api/cronapi/odata/v2/app/query421006/",
+    "audit": false
+  },
+  "securableViews": {
+    "customId": "securableViews",
+    "queryName": "Obter Views do Permissionável",
+    "sourceType": "entityFullName",
+    "baseEntity": null,
+    "blockly": null,
+    "entitySimpleName": "View",
+    "entityFullName": "app.entity.View",
+    "query": {
+      "isValid": true,
+      "isEmpty": false,
+      "operationType": "object",
+      "type": "select",
+      "rulesEntity": [
+        {
+          "entity": "View",
+          "namespace": "app.entity.View",
+          "alias": "v"
+        }
+      ],
+      "rulesSelect": [
+        {
+          "func": "get",
+          "field": "v",
+          "type": "string"
+        }
+      ],
+      "rulesGroupBy": [],
+      "rulesHaving": [],
+      "rulesOrderBy": [],
+      "rules": {
+        "condition": "AND",
+        "rules": [
+          {
+            "id": "v.securable.name",
+            "field": "v.securable.name",
+            "type": "string",
+            "input": "text",
+            "operator": "equal",
+            "value": ":securableName",
+            "valueIsField": false
+          }
+        ],
+        "not": false,
+        "valid": true
+      },
+      "isRawSql": false,
+      "multiTenant": false,
+      "paginatorAutomatic": false,
+      "pagination": false
+    },
+    "queryParamsValues": [
+      {
+        "fieldName": "securableName",
+        "fieldValue": ""
+      }
+    ],
+    "verbs": {
+      "GET": true,
+      "GETAuthorities": null,
+      "POST": true,
+      "POSTAuthorities": null,
+      "PUT": true,
+      "PUTAuthorities": null,
+      "DELETE": true,
+      "DELETEAuthorities": null,
+      "FILTER": true,
+      "FILTERAuthorities": null,
+      "COUNT": true,
+      "COUNTAuthorities": null
+    },
+    "events": {
+      "beforeInsert": null,
+      "beforeUpdate": null,
+      "beforeDelete": null,
+      "afterInsert": null,
+      "afterUpdate": null,
+      "afterDelete": null,
+      "onNavigate": null,
+      "onGetData": null,
+      "onError": null
+    },
+    "defaultValues": {
+      "id": null,
+      "securable": null,
+      "pattern": null,
+      "getMethodAllowed": null,
+      "headMethodAllowed": null,
+      "putMethodAllowed": null,
+      "postMethodAllowed": null,
+      "patchMethodAllowed": null,
+      "deleteMethodAllowed": null,
+      "optionsMethodAllowed": null,
+      "traceMethodAllowed": null
+    },
+    "defaultValuesProperties": {
+      "id": null,
+      "securable": null,
+      "pattern": null,
+      "getMethodAllowed": null,
+      "headMethodAllowed": null,
+      "putMethodAllowed": null,
+      "postMethodAllowed": null,
+      "patchMethodAllowed": null,
+      "deleteMethodAllowed": null,
+      "optionsMethodAllowed": null,
+      "traceMethodAllowed": null
+    },
+    "security": {
+      "id": null,
+      "securable": null,
+      "pattern": null,
+      "getMethodAllowed": null,
+      "headMethodAllowed": null,
+      "putMethodAllowed": null,
+      "postMethodAllowed": null,
+      "patchMethodAllowed": null,
+      "deleteMethodAllowed": null,
+      "optionsMethodAllowed": null,
+      "traceMethodAllowed": null
+    },
+    "calcFields": {},
+    "calcFieldsSecurity": {},
+    "calcFieldsProperties": {},
+    "errorHandles": {
+      "primaryKey": null,
+      "foreignKey": null
+    },
+    "serviceUrl": "api/cronapi/odata/v2/app/securableViews/",
+    "audit": false
+  },
+  "auth": {
+    "customId": "auth",
+    "queryName": "Autenticar",
+    "sourceType": "entityFullName",
+    "baseEntity": null,
+    "blockly": null,
+    "entitySimpleName": "User",
+    "entityFullName": "app.entity.User",
+    "query": {
+      "isValid": true,
+      "isEmpty": false,
+      "operationType": "object",
+      "type": "select",
+      "rulesEntity": [
+        {
+          "entity": "User",
+          "namespace": "app.entity.User",
+          "alias": "u"
+        }
+      ],
+      "rulesSelect": [
+        {
+          "func": "get",
+          "field": "u",
+          "type": "string"
+        }
+      ],
+      "rulesGroupBy": [],
+      "rulesHaving": [],
+      "rulesOrderBy": [],
+      "rules": {
+        "condition": "AND",
+        "rules": [
+          {
+            "id": "u.normalizedUserName",
+            "field": "u.normalizedUserName",
+            "type": "string",
+            "input": "text",
+            "operator": "equal",
+            "value": ":login",
+            "valueIsField": false
+          }
+        ],
+        "not": false,
+        "valid": true
+      },
+      "isRawSql": false,
+      "multiTenant": false,
+      "paginatorAutomatic": false,
+      "pagination": false
+    },
+    "queryParamsValues": [
+      {
+        "fieldName": "login",
+        "fieldValue": ""
+      }
+    ],
+    "verbs": {
+      "GET": false,
+      "GETAuthorities": null,
+      "POST": false,
+      "POSTAuthorities": null,
+      "PUT": false,
+      "PUTAuthorities": null,
+      "DELETE": false,
+      "DELETEAuthorities": null,
+      "FILTER": true,
+      "FILTERAuthorities": null,
+      "COUNT": true,
+      "COUNTAuthorities": null
+    },
+    "events": {
+      "beforeInsert": null,
+      "beforeUpdate": null,
+      "beforeDelete": null,
+      "afterInsert": null,
+      "afterUpdate": null,
+      "afterDelete": null,
+      "onNavigate": null,
+      "onGetData": null
+    },
+    "defaultValues": {
+      "id": null,
+      "accessFailedCount": null,
+      "email": null,
+      "emailConfirmed": null,
+      "lockoutEnabled": null,
+      "lockoutEnd": null,
+      "name": null,
+      "normalizedEmail": null,
+      "normalizedUserName": null,
+      "password": null,
+      "phoneNumber": null,
+      "phoneNumberConfirmed": null,
+      "securityStamp": null,
+      "twoFactorEnabled": null,
+      "userName": null
+    },
+    "defaultValuesProperties": {
+      "id": null,
+      "accessFailedCount": null,
+      "email": null,
+      "emailConfirmed": null,
+      "lockoutEnabled": null,
+      "lockoutEnd": null,
+      "name": null,
+      "normalizedEmail": null,
+      "normalizedUserName": null,
+      "password": null,
+      "phoneNumber": null,
+      "phoneNumberConfirmed": null,
+      "securityStamp": null,
+      "twoFactorEnabled": null,
+      "userName": null
+    },
+    "security": {
+      "id": null,
+      "accessFailedCount": null,
+      "email": null,
+      "emailConfirmed": null,
+      "lockoutEnabled": null,
+      "lockoutEnd": null,
+      "name": null,
+      "normalizedEmail": null,
+      "normalizedUserName": null,
+      "password": null,
+      "phoneNumber": null,
+      "phoneNumberConfirmed": null,
+      "securityStamp": null,
+      "twoFactorEnabled": null,
+      "userName": null
+    },
+    "calcFields": {},
+    "calcFieldsSecurity": {},
+    "calcFieldsProperties": {},
+    "errorHandles": {
+      "primaryKey": null,
+      "foreignKey": null
+    },
+    "serviceUrl": "api/cronapi/odata/v2/app/auth/"
+  },
+  "roles": {
+    "customId": "roles",
+    "queryName": "Obter Autorização",
+    "sourceType": "entityFullName",
+    "baseEntity": null,
+    "blockly": null,
+    "entitySimpleName": "Role",
+    "entityFullName": "app.entity.Role",
+    "query": {
+      "isValid": true,
+      "isEmpty": false,
+      "operationType": "object",
+      "type": "select",
+      "rulesEntity": [
+        {
+          "entity": "UserRole",
+          "namespace": "app.entity.UserRole",
+          "alias": "u"
+        }
+      ],
+      "rulesSelect": [
+        {
+          "func": "get",
+          "field": "u.role.normalizedName",
+          "type": "string"
+        }
+      ],
+      "rulesGroupBy": [],
+      "rulesHaving": [],
+      "rulesOrderBy": [],
+      "rules": {
+        "condition": "AND",
+        "rules": [
+          {
+            "id": "u.user.normalizedUserName",
+            "field": "u.user.normalizedUserName",
+            "type": "string",
+            "input": "text",
+            "operator": "equal",
+            "value": ":login",
+            "valueIsField": false
+          }
+        ],
+        "not": false,
+        "valid": true
+      },
+      "isRawSql": false,
+      "multiTenant": false,
+      "paginatorAutomatic": false,
+      "pagination": false
+    },
+    "queryParamsValues": [
+      {
+        "fieldName": "login",
+        "fieldValue": ""
+      }
+    ],
+    "verbs": {
+      "GET": false,
+      "GETAuthorities": null,
+      "POST": false,
+      "POSTAuthorities": null,
+      "PUT": false,
+      "PUTAuthorities": null,
+      "DELETE": false,
+      "DELETEAuthorities": null,
+      "FILTER": true,
+      "FILTERAuthorities": null,
+      "COUNT": true,
+      "COUNTAuthorities": null
+    },
+    "events": {
+      "beforeInsert": null,
+      "beforeUpdate": null,
+      "beforeDelete": null,
+      "afterInsert": null,
+      "afterUpdate": null,
+      "afterDelete": null,
+      "onNavigate": null,
+      "onGetData": null
+    },
+    "defaultValues": {
+      "id": null,
+      "builtin": null,
+      "membershipEnabled": null,
+      "name": null,
+      "normalizedName": null
+    },
+    "defaultValuesProperties": {
+      "id": null,
+      "builtin": null,
+      "membershipEnabled": null,
+      "name": null,
+      "normalizedName": null
+    },
+    "security": {
+      "id": null,
+      "builtin": null,
+      "membershipEnabled": null,
+      "name": null,
+      "normalizedName": null
+    },
+    "calcFields": {},
+    "calcFieldsSecurity": {},
+    "calcFieldsProperties": {},
+    "errorHandles": {
+      "primaryKey": null,
+      "foreignKey": null
+    },
+    "serviceUrl": "api/cronapi/odata/v2/app/roles/"
+  },
+  "device": {
+    "customId": "device",
+    "queryName": "Atualizar Dispositivos",
+    "screen": "",
+    "sourceType": "entityFullName",
+    "blockly": null,
+    "entitySimpleName": "Device",
+    "entityFullName": "app.entity.Device",
+    "query": {
+      "isValid": true,
+      "isEmpty": false,
+      "operationType": "object",
+      "type": "select",
+      "rulesEntity": [
+        {
+          "entity": "Device",
+          "namespace": "app.entity.Device",
+          "alias": "d"
+        }
+      ],
+      "rulesSelect": [
+        {
+          "func": "get",
+          "field": "d",
+          "type": "string"
+        }
+      ],
+      "rulesGroupBy": [],
+      "rulesHaving": [],
+      "rulesOrderBy": [],
+      "rules": {
+        "condition": "AND",
+        "rules": [
+          {
+            "id": "d.id",
+            "field": "d.id",
+            "type": "string",
+            "input": "text",
+            "operator": "equal",
+            "value": ":id",
+            "valueIsField": false
+          }
+        ],
+        "not": false,
+        "valid": true
+      },
+      "isRawSql": false,
+      "multiTenant": true,
+      "paginatorAutomatic": false
+    },
+    "queryParamsValues": [
+      {
+        "fieldName": "id",
+        "fieldValue": ""
+      }
+    ],
+    "verbs": {
+      "GET": true,
+      "GETAuthorities": null,
+      "POST": true,
+      "POSTAuthorities": null,
+      "PUT": true,
+      "PUTAuthorities": null,
+      "DELETE": true,
+      "DELETEAuthorities": null,
+      "FILTER": true,
+      "FILTERAuthorities": null
+    },
+    "events": {
+      "beforeInsert": null,
+      "beforeUpdate": null,
+      "beforeDelete": null,
+      "afterInsert": null,
+      "afterUpdate": null,
+      "afterDelete": null,
+      "onNavigate": null,
+      "onGetData": null
+    },
+    "defaultValues": {
+      "id": null,
+      "token": null
+    },
+    "security": {
+      "id": null,
+      "token": null
+    },
+    "calcFields": {},
+    "calcFieldsSecurity": {},
+    "errorHandles": {
+      "primaryKey": null,
+      "foreignKey": null
+    },
+    "serviceUrl": "api/cronapi/query/1jy88nt41afza/"
+  },
+  "roleManager": {
+    "customId": "roleManager",
+    "queryName": "Gerenciador de Papéis",
+    "sourceType": "entityFullName",
+    "baseEntity": null,
+    "blockly": null,
+    "entitySimpleName": "Role",
+    "entityFullName": "app.entity.Role",
+    "query": {
+      "isValid": true,
+      "rulesEntity": [
+        {
+          "entity": "Role",
+          "alias": "r",
+          "namespace": "app.entity.Role"
+        }
+      ],
+      "rulesSelect": [
+        {
+          "func": "get",
+          "field": "r"
+        }
+      ],
+      "rulesGroupBy": [],
+      "rulesHaving": [],
+      "rulesOrderBy": [],
+      "rules": {
+        "condition": "AND",
+        "not": false,
+        "valid": true,
+        "rules": []
+      }
+    },
+    "queryParamsValues": [],
+    "verbs": {
+      "GET": true,
+      "GETAuthorities": null,
+      "POST": true,
+      "POSTAuthorities": null,
+      "PUT": true,
+      "PUTAuthorities": null,
+      "DELETE": true,
+      "DELETEAuthorities": null,
+      "FILTER": true,
+      "FILTERAuthorities": null,
+      "COUNT": true,
+      "COUNTAuthorities": null
+    },
+    "events": {
+      "beforeInsert": {
+        "type": "server",
+        "blocklyMethod": "BeforeInsert",
+        "blocklyClass": "blockly.RoleManager",
+        "blocklyLanguage": "java",
+        "blocklyParams": [
+          {
+            "name": "Entidade\u0026lt;app.entity.Role\u0026gt;",
+            "value": "data",
+            "type": "CUSTOM"
+          }
+        ],
+        "blocklyJson": {
+          "namespace": "blockly.RoleManager",
+          "sourcePath": "src/main/java/blockly/RoleManager.blockly",
+          "language": "java",
+          "methods": [
+            {
+              "name": "BeforeInsert",
+              "hasReturn": "true",
+              "params": [
+                "Entidade\u0026lt;app.entity.Role\u0026gt;"
+              ]
+            },
+            {
+              "name": "BeforeUpdate",
+              "hasReturn": "true",
+              "params": [
+                "Entidade\u0026lt;app.entity.Role\u0026gt;"
+              ]
+            },
+            {
+              "name": "Normalize",
+              "hasReturn": "true",
+              "params": [
+                "Entidade\u0026lt;app.entity.Role\u0026gt;"
+              ]
+            }
+          ]
+        }
+      },
+      "beforeUpdate": {
+        "type": "server",
+        "blocklyMethod": "BeforeUpdate",
+        "blocklyClass": "blockly.RoleManager",
+        "blocklyLanguage": "java",
+        "blocklyParams": [
+          {
+            "name": "Entidade\u0026lt;app.entity.Role\u0026gt;",
+            "value": "data",
+            "type": "CUSTOM"
+          }
+        ],
+        "blocklyJson": {
+          "namespace": "blockly.RoleManager",
+          "sourcePath": "src/main/java/blockly/RoleManager.blockly",
+          "language": "java",
+          "methods": [
+            {
+              "name": "BeforeInsert",
+              "hasReturn": "true",
+              "params": [
+                "Entidade\u0026lt;app.entity.Role\u0026gt;"
+              ]
+            },
+            {
+              "name": "BeforeUpdate",
+              "hasReturn": "true",
+              "params": [
+                "Entidade\u0026lt;app.entity.Role\u0026gt;"
+              ]
+            },
+            {
+              "name": "Normalize",
+              "hasReturn": "true",
+              "params": [
+                "Entidade\u0026lt;app.entity.Role\u0026gt;"
+              ]
+            }
+          ]
+        }
+      },
+      "beforeDelete": null,
+      "afterInsert": null,
+      "afterUpdate": null,
+      "afterDelete": null,
+      "onNavigate": null,
+      "onGetData": null,
+      "onError": null
+    },
+    "defaultValues": {
+      "id": null,
+      "builtIn": null,
+      "membershipEnabled": null,
+      "name": null,
+      "normalizedName": null
+    },
+    "defaultValuesProperties": {
+      "id": null,
+      "builtIn": null,
+      "membershipEnabled": null,
+      "name": null,
+      "normalizedName": null
+    },
+    "security": {
+      "id": null,
+      "builtIn": null,
+      "membershipEnabled": null,
+      "name": null,
+      "normalizedName": null
+    },
+    "calcFields": {},
+    "calcFieldsSecurity": {},
+    "calcFieldsProperties": {},
+    "errorHandles": {
+      "primaryKey": null,
+      "foreignKey": null
+    },
+    "serviceUrl": "api/cronapi/odata/v2/app/roleManager/",
+    "audit": false
+  },
+  "userManager": {
+    "customId": "userManager",
+    "queryName": "Gerenciador de Usuários",
+    "sourceType": "entityFullName",
+    "baseEntity": null,
+    "blockly": null,
+    "entitySimpleName": "User",
+    "entityFullName": "app.entity.User",
+    "query": {
+      "isValid": true,
+      "rulesEntity": [
+        {
+          "entity": "User",
+          "alias": "u",
+          "namespace": "app.entity.User"
+        }
+      ],
+      "rulesSelect": [
+        {
+          "func": "get",
+          "field": "u"
+        }
+      ],
+      "rulesGroupBy": [],
+      "rulesHaving": [],
+      "rulesOrderBy": [],
+      "rules": {
+        "condition": "AND",
+        "not": false,
+        "valid": true,
+        "rules": []
+      }
+    },
+    "queryParamsValues": [],
+    "verbs": {
+      "GET": true,
+      "GETAuthorities": null,
+      "POST": true,
+      "POSTAuthorities": null,
+      "PUT": true,
+      "PUTAuthorities": null,
+      "DELETE": true,
+      "DELETEAuthorities": null,
+      "FILTER": true,
+      "FILTERAuthorities": null,
+      "COUNT": true,
+      "COUNTAuthorities": null
+    },
+    "events": {
+      "beforeInsert": {
+        "type": "server",
+        "blocklyMethod": "BeforeInsert",
+        "blocklyClass": "blockly.UserManager",
+        "blocklyLanguage": "java",
+        "blocklyParams": [
+          {
+            "name": "Entidade\u0026lt;app.entity.User\u0026gt;",
+            "value": "data",
+            "type": "CUSTOM"
+          }
+        ],
+        "blocklyJson": {
+          "namespace": "blockly.UserManager",
+          "sourcePath": "src/main/java/blockly/UserManager.blockly",
+          "language": "java",
+          "methods": [
+            {
+              "name": "Normalize",
+              "hasReturn": "true",
+              "params": [
+                "Entidade\u0026lt;app.entity.User\u0026gt;"
+              ]
+            },
+            {
+              "name": "BeforeUpdate",
+              "hasReturn": "true",
+              "params": [
+                "Entidade\u0026lt;app.entity.User\u0026gt;"
+              ]
+            },
+            {
+              "name": "BeforeInsert",
+              "hasReturn": "true",
+              "params": [
+                "Entidade\u0026lt;app.entity.User\u0026gt;"
+              ]
+            }
+          ]
+        }
+      },
+      "beforeUpdate": {
+        "type": "server",
+        "blocklyMethod": "BeforeUpdate",
+        "blocklyClass": "blockly.UserManager",
+        "blocklyLanguage": "java",
+        "blocklyParams": [
+          {
+            "name": "Entidade\u0026lt;app.entity.User\u0026gt;",
+            "value": "data",
+            "type": "CUSTOM"
+          }
+        ],
+        "blocklyJson": {
+          "namespace": "blockly.UserManager",
+          "sourcePath": "src/main/java/blockly/UserManager.blockly",
+          "language": "java",
+          "methods": [
+            {
+              "name": "Normalize",
+              "hasReturn": "true",
+              "params": [
+                "Entidade\u0026lt;app.entity.User\u0026gt;"
+              ]
+            },
+            {
+              "name": "BeforeUpdate",
+              "hasReturn": "true",
+              "params": [
+                "Entidade\u0026lt;app.entity.User\u0026gt;"
+              ]
+            },
+            {
+              "name": "BeforeInsert",
+              "hasReturn": "true",
+              "params": [
+                "Entidade\u0026lt;app.entity.User\u0026gt;"
+              ]
+            }
+          ]
+        }
+      },
+      "beforeDelete": null,
+      "afterInsert": null,
+      "afterUpdate": null,
+      "afterDelete": null,
+      "onNavigate": null,
+      "onGetData": null,
+      "onError": null
+    },
+    "defaultValues": {
+      "id": null,
+      "accessFailedCount": null,
+      "email": null,
+      "emailConfirmed": null,
+      "lockoutEnabled": null,
+      "lockoutEnd": null,
+      "name": null,
+      "normalizedEmail": null,
+      "normalizedUserName": null,
+      "password": null,
+      "phoneNumber": null,
+      "phoneNumberConfirmed": null,
+      "securityStamp": null,
+      "twoFactorEnabled": null,
+      "userName": null,
+      "theme": null,
+      "picture": null
+    },
+    "defaultValuesProperties": {
+      "id": null,
+      "accessFailedCount": null,
+      "email": null,
+      "emailConfirmed": null,
+      "lockoutEnabled": null,
+      "lockoutEnd": null,
+      "name": null,
+      "normalizedEmail": null,
+      "normalizedUserName": null,
+      "password": null,
+      "phoneNumber": null,
+      "phoneNumberConfirmed": null,
+      "securityStamp": null,
+      "twoFactorEnabled": null,
+      "userName": null,
+      "theme": null,
+      "picture": null
+    },
+    "security": {
+      "id": null,
+      "accessFailedCount": null,
+      "email": null,
+      "emailConfirmed": null,
+      "lockoutEnabled": null,
+      "lockoutEnd": null,
+      "name": null,
+      "normalizedEmail": null,
+      "normalizedUserName": null,
+      "password": null,
+      "phoneNumber": null,
+      "phoneNumberConfirmed": null,
+      "securityStamp": null,
+      "twoFactorEnabled": null,
+      "userName": null,
+      "theme": null,
+      "picture": null
+    },
+    "calcFields": {},
+    "calcFieldsSecurity": {},
+    "calcFieldsProperties": {},
+    "errorHandles": {
+      "primaryKey": null,
+      "foreignKey": null
+    },
+    "serviceUrl": "api/cronapi/odata/v2/app/userManager/",
+    "audit": false
+  },
+  "query792681": {
+    "customId": "carrousuario",
+    "queryName": "CarroUsuario",
+    "sourceType": "entityFullName",
+    "baseEntity": null,
+    "blockly": null,
+    "entitySimpleName": "Carro",
+    "entityFullName": "app.entity.Carro",
+    "query": {
+      "isValid": true,
+      "isEmpty": false,
+      "operationType": "object",
+      "type": "select",
+      "rulesEntity": [
+        {
+          "entity": "Carro",
+          "namespace": "app.entity.Carro",
+          "alias": "c"
+        }
+      ],
+      "rulesSelect": [
+        {
+          "func": "get",
+          "field": "c",
+          "type": "string"
+        }
+      ],
+      "rulesGroupBy": [],
+      "rulesHaving": [],
+      "rulesOrderBy": [],
+      "rules": {
+        "condition": "AND",
+        "rules": [
+          {
+            "id": "c.user.id",
+            "field": "c.user.id",
+            "type": "string",
+            "input": "text",
+            "operator": "equal",
+            "value": ":userId",
+            "valueIsField": false
+          }
+        ],
+        "not": false,
+        "valid": true
+      },
+      "isRawSql": false,
+      "multiTenant": false,
+      "paginatorAutomatic": false,
+      "pagination": false
+    },
+    "queryParamsValues": [
+      {
+        "fieldName": "userId",
+        "fieldValue": {
+          "type": "server",
+          "blocklyMethod": "obterIdLogado",
+          "blocklyClass": "blockly.Usuario",
+          "blocklyLanguage": "java",
+          "blocklyParams": [],
+          "blocklyJson": {
+            "namespace": "blockly.Usuario",
+            "sourcePath": "src/main/java/blockly/Usuario.blockly",
+            "language": "java",
+            "methods": [
+              {
+                "name": "obterIdLogado",
+                "hasReturn": "true",
+                "params": []
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "verbs": {
+      "GET": true,
+      "GETAuthorities": null,
+      "POST": true,
+      "POSTAuthorities": null,
+      "PUT": true,
+      "PUTAuthorities": null,
+      "DELETE": true,
+      "DELETEAuthorities": null,
+      "FILTER": true,
+      "FILTERAuthorities": null,
+      "COUNT": true,
+      "COUNTAuthorities": null
+    },
+    "events": {
+      "beforeInsert": null,
+      "beforeUpdate": null,
+      "beforeDelete": null,
+      "afterInsert": null,
+      "afterUpdate": null,
+      "afterDelete": null,
+      "onNavigate": null,
+      "onError": null
+    },
+    "defaultValues": {
+      "id": null,
+      "placa": null,
+      "marca": null,
+      "modelo": null,
+      "ano": null,
+      "user": {
+        "type": "server",
+        "blocklyMethod": "obterIdLogado",
+        "blocklyClass": "blockly.Usuario",
+        "blocklyLanguage": "java",
+        "blocklyParams": [],
+        "blocklyJson": {
+          "namespace": "blockly.Usuario",
+          "sourcePath": "src/main/java/blockly/Usuario.blockly",
+          "language": "java",
+          "methods": [
+            {
+              "name": "obterIdLogado",
+              "hasReturn": "true",
+              "params": []
+            }
+          ]
+        },
+        "blocklyGETMethod": null,
+        "blocklyPOSTMethod": null,
+        "blocklyPUTMethod": null,
+        "blocklyDELETEMethod": null,
+        "blocklyFILTERMethod": null,
+        "blocklyCOUNTMethod": null
+      }
+    },
+    "defaultValuesProperties": {
+      "id": null,
+      "placa": null,
+      "marca": null,
+      "modelo": null,
+      "ano": null,
+      "user": null
+    },
+    "security": {
+      "id": null,
+      "placa": null,
+      "marca": null,
+      "modelo": null,
+      "ano": null,
+      "user": null
+    },
+    "calcFields": {},
+    "calcFieldsSecurity": {},
+    "calcFieldsProperties": {},
+    "errorHandles": {
+      "primaryKey": null,
+      "foreignKey": null
+    },
+    "serviceUrl": "api/cronapi/odata/v2/app/query792681/",
+    "audit": false
+  },
+  "query333308": {
+    "customId": "query333308",
+    "queryName": "AbastecimentoUsuario",
+    "sourceType": "entityFullName",
+    "baseEntity": null,
+    "blockly": null,
+    "entitySimpleName": "Abastecimento",
+    "entityFullName": "app.entity.Abastecimento",
+    "query": {
+      "isValid": true,
+      "isEmpty": false,
+      "operationType": "object",
+      "type": "select",
+      "rulesEntity": [
+        {
+          "entity": "Abastecimento",
+          "namespace": "app.entity.Abastecimento",
+          "alias": "a"
+        }
+      ],
+      "rulesSelect": [
+        {
+          "func": "get",
+          "field": "a",
+          "type": "string"
+        }
+      ],
+      "rulesGroupBy": [],
+      "rulesHaving": [],
+      "rulesOrderBy": [],
+      "rules": {
+        "condition": "AND",
+        "rules": [
+          {
+            "id": "a.carro.user.id",
+            "field": "a.carro.user.id",
+            "type": "string",
+            "input": "text",
+            "operator": "equal",
+            "value": ":carroUserId",
+            "valueIsField": false
+          }
+        ],
+        "not": false,
+        "valid": true
+      },
+      "isRawSql": false,
+      "multiTenant": false,
+      "paginatorAutomatic": false,
+      "pagination": false
+    },
+    "queryParamsValues": [
+      {
+        "fieldName": "carroUserId",
+        "fieldValue": {
+          "type": "server",
+          "blocklyMethod": "obterIdLogado",
+          "blocklyClass": "blockly.Usuario",
+          "blocklyLanguage": "java",
+          "blocklyParams": [],
+          "blocklyJson": {
+            "namespace": "blockly.Usuario",
+            "sourcePath": "src/main/java/blockly/Usuario.blockly",
+            "language": "java",
+            "methods": [
+              {
+                "name": "obterIdLogado",
+                "hasReturn": "true",
+                "params": []
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "verbs": {
+      "GET": true,
+      "GETAuthorities": null,
+      "POST": true,
+      "POSTAuthorities": null,
+      "PUT": true,
+      "PUTAuthorities": null,
+      "DELETE": true,
+      "DELETEAuthorities": null,
+      "FILTER": true,
+      "FILTERAuthorities": null,
+      "COUNT": true,
+      "COUNTAuthorities": null
+    },
+    "events": {
+      "beforeInsert": null,
+      "beforeUpdate": null,
+      "beforeDelete": null,
+      "afterInsert": null,
+      "afterUpdate": null,
+      "afterDelete": null,
+      "onNavigate": null,
+      "onError": null
+    },
+    "defaultValues": {
+      "id": null,
+      "posto": null,
+      "carro": null,
+      "data": null,
+      "valor": null,
+      "km": null,
+      "precoLitro": null
+    },
+    "defaultValuesProperties": {
+      "id": null,
+      "posto": null,
+      "carro": null,
+      "data": null,
+      "valor": null,
+      "km": null,
+      "precoLitro": null
+    },
+    "security": {
+      "id": null,
+      "posto": null,
+      "carro": null,
+      "data": null,
+      "valor": null,
+      "km": null,
+      "precoLitro": null
+    },
+    "calcFields": {
+      "custokm": {
+        "blocklyClass": "blockly.Abastecimento",
+        "blocklyMethod": "custoKm",
+        "blocklyLanguage": "java",
+        "blocklyParams": [
+          {
+            "name": "Entidade\u003capp.entity.Abastecimento\u003e",
+            "value": "data",
+            "type": "CUSTOM"
+          }
+        ],
+        "blocklyJson": {
+          "namespace": "blockly.Abastecimento",
+          "sourcePath": "src/main/java/blockly/Abastecimento.blockly",
+          "language": "java",
+          "class": "blockly.Abastecimento",
+          "methods": [
+            {
+              "name": "custoKm",
+              "hasReturn": "true",
+              "params": [
+                "Entidade\u003capp.entity.Abastecimento\u003e"
+              ]
+            }
+          ]
+        },
+        "blocklyGETMethod": null,
+        "blocklyPOSTMethod": null,
+        "blocklyPUTMethod": null,
+        "blocklyDELETEMethod": null,
+        "blocklyFILTERMethod": null,
+        "blocklyCOUNTMethod": null
+      }
+    },
+    "calcFieldsSecurity": {
+      "custokm": null
+    },
+    "calcFieldsProperties": {
+      "custokm": {
+        "type": "Double"
+      }
+    },
+    "errorHandles": {
+      "primaryKey": null,
+      "foreignKey": null
+    },
+    "serviceUrl": "api/cronapi/odata/v2/app/query333308/",
+    "audit": false
+  },
+  "query360797": {
+    "customId": "postonews",
+    "queryName": "PostoNews",
+    "sourceType": "entityFullName",
+    "baseEntity": null,
+    "blockly": null,
+    "entitySimpleName": "Posto",
+    "entityFullName": "app.entity.Posto",
+    "query": {
+      "isValid": true,
+      "rulesEntity": [
+        {
+          "entity": "Posto",
+          "alias": "p",
+          "namespace": "app.entity.Posto"
+        }
+      ],
+      "rulesSelect": [
+        {
+          "func": "get",
+          "field": "p"
+        }
+      ],
+      "rulesGroupBy": [],
+      "rulesHaving": [],
+      "rulesOrderBy": [],
+      "rules": {
+        "condition": "AND",
+        "not": false,
+        "valid": true,
+        "rules": []
+      }
+    },
+    "queryParamsValues": [],
+    "verbs": {
+      "GET": true,
+      "GETAuthorities": [
+        "Public"
+      ],
+      "POST": true,
+      "POSTAuthorities": null,
+      "PUT": true,
+      "PUTAuthorities": null,
+      "DELETE": true,
+      "DELETEAuthorities": null,
+      "FILTER": true,
+      "FILTERAuthorities": [
+        "Public"
+      ],
+      "COUNT": true,
+      "COUNTAuthorities": [
+        "Public"
+      ]
+    },
+    "events": {
+      "beforeInsert": null,
+      "beforeUpdate": null,
+      "beforeDelete": null,
+      "afterInsert": {
+        "blocklyMethod": "depoisInserir",
+        "blocklyClass": "blockly.Posto",
+        "blocklyLanguage": "java",
+        "blocklyParams": [
+          {
+            "name": "Entidade\u003capp.entity.Posto\u003e",
+            "value": "data",
+            "type": "CUSTOM"
+          }
+        ],
+        "blocklyJson": {
+          "namespace": "blockly.Posto",
+          "sourcePath": "src/main/java/blockly/Posto.blockly",
+          "language": "java",
+          "methods": [
+            {
+              "name": "depoisInserir",
+              "hasReturn": "true",
+              "params": [
+                "Entidade\u003capp.entity.Posto\u003e"
+              ]
+            }
+          ]
+        }
+      },
+      "afterUpdate": null,
+      "afterDelete": null,
+      "onNavigate": null,
+      "onError": null
+    },
+    "defaultValues": {
+      "id": null,
+      "posto": null,
+      "cep": null,
+      "endereco": null,
+      "cidade": null,
+      "uf": null
+    },
+    "defaultValuesProperties": {
+      "id": null,
+      "posto": null,
+      "cep": null,
+      "endereco": null,
+      "cidade": null,
+      "uf": null
+    },
+    "security": {
+      "id": null,
+      "posto": null,
+      "cep": null,
+      "endereco": null,
+      "cidade": null,
+      "uf": null
+    },
+    "calcFields": {},
+    "calcFieldsSecurity": {},
+    "calcFieldsProperties": {},
+    "errorHandles": {
+      "primaryKey": null,
+      "foreignKey": null
+    },
+    "serviceUrl": "api/cronapi/odata/v2/app/query360797/",
+    "audit": false
+  },
+  "query570708": {
+    "customId": "query570708",
+    "queryName": "NoticiaSegura",
+    "sourceType": "entityFullName",
+    "baseEntity": null,
+    "blockly": null,
+    "entitySimpleName": "Noticia",
+    "entityFullName": "app.entity.Noticia",
+    "query": {
+      "isValid": true,
+      "rulesEntity": [
+        {
+          "entity": "Noticia",
+          "alias": "n",
+          "namespace": "app.entity.Noticia"
+        }
+      ],
+      "rulesSelect": [
+        {
+          "func": "get",
+          "field": "n"
+        }
+      ],
+      "rulesGroupBy": [],
+      "rulesHaving": [],
+      "rulesOrderBy": [],
+      "rules": {
+        "condition": "AND",
+        "not": false,
+        "valid": true,
+        "rules": []
+      }
+    },
+    "queryParamsValues": [],
+    "verbs": {
+      "GET": true,
+      "GETAuthorities": null,
+      "POST": true,
+      "POSTAuthorities": [
+        "Authenticated"
+      ],
+      "PUT": true,
+      "PUTAuthorities": [
+        "Administrators"
+      ],
+      "DELETE": true,
+      "DELETEAuthorities": [
+        "Administrators"
+      ],
+      "FILTER": true,
+      "FILTERAuthorities": null,
+      "COUNT": true,
+      "COUNTAuthorities": null
+    },
+    "events": {
+      "beforeInsert": null,
+      "beforeUpdate": null,
+      "beforeDelete": null,
+      "afterInsert": null,
+      "afterUpdate": null,
+      "afterDelete": null,
+      "onNavigate": null,
+      "onError": null
+    },
+    "defaultValues": {
+      "id": null,
+      "texto": null,
+      "data": null
+    },
+    "defaultValuesProperties": {
+      "id": null,
+      "texto": null,
+      "data": null
+    },
+    "security": {
+      "id": null,
+      "texto": null,
+      "data": null
+    },
+    "calcFields": {},
+    "calcFieldsSecurity": {},
+    "calcFieldsProperties": {},
+    "errorHandles": {
+      "primaryKey": null,
+      "foreignKey": null
+    },
+    "serviceUrl": "api/cronapi/odata/v2/app/query570708/",
+    "audit": true
+  },
+  "query332271": {
+    "customId": "query332271",
+    "queryName": "MarcasFIPE",
+    "sourceType": "blockly",
+    "baseEntity": null,
+    "blockly": {
+      "blocklyClass": "blockly.MarcasFipe",
+      "blocklyMethod": "obterDados",
+      "blocklyLanguage": "java",
+      "blocklyParams": [
+        {
+          "name": "Dados",
+          "value": "data",
+          "type": "CUSTOM"
+        }
+      ],
+      "blocklyJson": {
+        "namespace": "blockly.MarcasFipe",
+        "sourcePath": "src/main/java/blockly/MarcasFipe.blockly",
+        "language": "java",
+        "class": "blockly.MarcasFipe",
+        "methods": [
+          {
+            "name": "obterDados",
+            "hasReturn": "true",
+            "params": [
+              "Dados"
+            ]
+          }
+        ]
+      },
+      "blocklyGETMethod": "obterDados",
+      "blocklyPOSTMethod": "obterDados",
+      "blocklyPUTMethod": "obterDados",
+      "blocklyDELETEMethod": "obterDados",
+      "blocklyFILTERMethod": "obterDados",
+      "blocklyCOUNTMethod": "obterDados"
+    },
+    "entitySimpleName": null,
+    "entityFullName": null,
+    "query": "",
+    "queryParamsValues": [],
+    "verbs": {
+      "GET": true,
+      "GETAuthorities": null,
+      "POST": false,
+      "POSTAuthorities": null,
+      "PUT": false,
+      "PUTAuthorities": null,
+      "DELETE": false,
+      "DELETEAuthorities": null,
+      "FILTER": false,
+      "FILTERAuthorities": null,
+      "COUNT": true,
+      "COUNTAuthorities": null
+    },
+    "events": {
+      "beforeInsert": null,
+      "beforeUpdate": null,
+      "beforeDelete": null,
+      "afterInsert": null,
+      "afterUpdate": null,
+      "afterDelete": null,
+      "onNavigate": null,
+      "onError": null
+    },
+    "defaultValues": {},
+    "defaultValuesProperties": {},
+    "security": {},
+    "calcFields": {
+      "codigo": null,
+      "nome": null
+    },
+    "calcFieldsSecurity": {
+      "codigo": null,
+      "nome": null
+    },
+    "calcFieldsProperties": {
+      "codigo": {
+        "type": "String"
+      },
+      "nome": {
+        "type": "String"
+      }
+    },
+    "errorHandles": {
+      "primaryKey": null,
+      "foreignKey": null
+    },
+    "serviceUrl": "api/cronapi/odata/v2/app/query332271/",
+    "audit": false
+  },
+  "query123986": {
+    "customId": "query123986",
+    "queryName": "CustoMedioKm",
+    "sourceType": "blockly",
+    "baseEntity": null,
+    "blockly": {
+      "type": "server",
+      "blocklyMethod": "custoMedioKm",
+      "blocklyClass": "blockly.Estatisticas",
+      "blocklyLanguage": "java",
+      "blocklyParams": [],
+      "blocklyJson": {
+        "namespace": "blockly.Estatisticas",
+        "sourcePath": "src/main/java/blockly/Estatisticas.blockly",
+        "language": "java",
+        "class": "blockly.Estatisticas",
+        "methods": [
+          {
+            "name": "custoMedioKm",
+            "hasReturn": "true",
+            "params": []
+          }
+        ]
+      },
+      "blocklyGETMethod": "custoMedioKm",
+      "blocklyPOSTMethod": "custoMedioKm",
+      "blocklyPUTMethod": "custoMedioKm",
+      "blocklyDELETEMethod": "custoMedioKm",
+      "blocklyFILTERMethod": "custoMedioKm",
+      "blocklyCOUNTMethod": "custoMedioKm"
+    },
+    "entitySimpleName": null,
+    "entityFullName": null,
+    "query": "",
+    "queryParamsValues": [],
+    "verbs": {
+      "GET": true,
+      "GETAuthorities": null,
+      "POST": true,
+      "POSTAuthorities": null,
+      "PUT": true,
+      "PUTAuthorities": null,
+      "DELETE": true,
+      "DELETEAuthorities": null,
+      "FILTER": true,
+      "FILTERAuthorities": null,
+      "COUNT": true,
+      "COUNTAuthorities": null
+    },
+    "events": {
+      "beforeInsert": null,
+      "beforeUpdate": null,
+      "beforeDelete": null,
+      "afterInsert": null,
+      "afterUpdate": null,
+      "afterDelete": null,
+      "onNavigate": null,
+      "onError": null
+    },
+    "defaultValues": {
+      "custokm": null,
+      "marca": null,
+      "modelo": null
+    },
+    "defaultValuesProperties": {
+      "custokm": {
+        "key": false,
+        "nullable": true,
+        "type": "String"
+      },
+      "marca": {
+        "key": false,
+        "nullable": true,
+        "type": "String"
+      },
+      "modelo": {
+        "key": false,
+        "nullable": true,
+        "type": "String"
+      }
+    },
+    "security": {
+      "custokm": null,
+      "marca": null,
+      "modelo": null
+    },
+    "calcFields": {},
+    "calcFieldsSecurity": {},
+    "calcFieldsProperties": {},
+    "errorHandles": {
+      "primaryKey": null,
+      "foreignKey": null
+    },
+    "serviceUrl": "api/cronapi/odata/v2/app/query123986/",
+    "audit": false
+  },
+  "query140630": {
+    "customId": "query140630",
+    "queryName": "Estatisticas",
+    "sourceType": "entityFullName",
+    "baseEntity": null,
+    "blockly": null,
+    "entitySimpleName": "Abastecimento",
+    "entityFullName": "app.entity.Abastecimento",
+    "query": {
+      "isValid": true,
+      "isEmpty": false,
+      "operationType": "object",
+      "type": "select",
+      "rulesEntity": [
+        {
+          "entity": "Abastecimento",
+          "namespace": "app.entity.Abastecimento",
+          "alias": "a"
+        }
+      ],
+      "rulesSelect": [
+        {
+          "func": "get",
+          "field": "a.posto.posto",
+          "type": "string"
+        },
+        {
+          "func": "avg",
+          "field": "a.valor",
+          "type": "double"
+        },
+        {
+          "func": "sum",
+          "field": "a.valor",
+          "type": "double"
+        },
+        {
+          "func": "count",
+          "field": "a.id",
+          "type": "string"
+        }
+      ],
+      "rulesGroupBy": [
+        {
+          "field": "a.posto.posto"
+        }
+      ],
+      "rulesHaving": [],
+      "rulesOrderBy": [],
+      "rules": {
+        "condition": "AND",
+        "rules": [
+          {
+            "id": "a.data",
+            "field": "a.data",
+            "type": "date",
+            "input": "text",
+            "operator": "between",
+            "value": [
+              ":dtini",
+              ":dtfim"
+            ],
+            "valueIsField": false
+          }
+        ],
+        "not": false,
+        "valid": true
+      },
+      "isRawSql": false,
+      "multiTenant": false,
+      "paginatorAutomatic": false,
+      "pagination": false
+    },
+    "queryParamsValues": [
+      {
+        "fieldName": "dtini",
+        "fieldValue": ""
+      },
+      {
+        "fieldName": "dtfim",
+        "fieldValue": ""
+      }
+    ],
+    "verbs": {
+      "GET": true,
+      "GETAuthorities": null,
+      "POST": true,
+      "POSTAuthorities": null,
+      "PUT": true,
+      "PUTAuthorities": null,
+      "DELETE": true,
+      "DELETEAuthorities": null,
+      "FILTER": true,
+      "FILTERAuthorities": null,
+      "COUNT": true,
+      "COUNTAuthorities": null
+    },
+    "events": {
+      "beforeInsert": null,
+      "beforeUpdate": null,
+      "beforeDelete": null,
+      "afterInsert": null,
+      "afterUpdate": null,
+      "afterDelete": null,
+      "onNavigate": null,
+      "onError": null
+    },
+    "defaultValues": {
+      "id": null,
+      "posto": null,
+      "carro": null,
+      "data": null,
+      "valor": null,
+      "km": null,
+      "precoLitro": null
+    },
+    "defaultValuesProperties": {
+      "id": null,
+      "posto": null,
+      "carro": null,
+      "data": null,
+      "valor": null,
+      "km": null,
+      "precoLitro": null
+    },
+    "security": {
+      "id": null,
+      "posto": null,
+      "carro": null,
+      "data": null,
+      "valor": null,
+      "km": null,
+      "precoLitro": null
+    },
+    "calcFields": {},
+    "calcFieldsSecurity": {},
+    "calcFieldsProperties": {},
+    "errorHandles": {
+      "primaryKey": null,
+      "foreignKey": null
+    },
+    "serviceUrl": "api/cronapi/odata/v2/app/query140630/",
+    "audit": false
+  }
+}

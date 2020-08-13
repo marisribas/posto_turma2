@@ -1,0 +1,24 @@
+<ion-view class="pane"> 
+  <ion-header-bar align-title="center" class="bar bar-positive" xattr-theme="bar-positive" data-component="crn-ion-header-bar"> 
+    <div class="buttons buttons-left header-item"> 
+      <button class="button button-clear" menu-toggle="left" data-component="crn-button" xattr-type="button-clear"> <i class="icon ion-navicon"></i> </button> 
+    </div> 
+    <h1 class="title">Meu Local</h1> 
+    <div class="buttons buttons-right header-item"> 
+       
+    </div> 
+  </ion-header-bar> 
+  <ion-content data-component="crn-ion-content" class="scroll-content has-header"> 
+    <div class="item item-input component-holder" data-component="crn-input" id="crn-input-419844">
+      <input aria-label="Aria Label Text" id="crn-input1466" type="text" placeholder="Latitude" ng-model="vars.vLatitude" mask="" keyboard="">
+    </div>
+    <div class="item item-input component-holder" data-component="crn-input" id="crn-input-96121">
+      <input aria-label="Aria Label Text" id="crn-input146669681" type="text" placeholder="Longitude" ng-model="vars.vLongitude" mask="" keyboard="">
+    </div>
+    <button class="button button-block button-positive component-holder" type="submit" xattr-fullsize="button-block" xattr-theme="button-positive" ng-click="cronapi.client('js.blockly.MeuLocal.ObterCoordenadas').run()" data-component="crn-button" id="crn-button-568276"><i class="ion ion-location"></i> <span>Obter coordenadas</span></button>
+    <button class="button button-block button-positive component-holder" type="submit" xattr-fullsize="button-block" xattr-theme="button-positive" ng-click="cronapi.client('js.blockly.MeuLocal.desenharMapa').run()" data-component="crn-button" id="crn-button-982705"><i class="ion ion-ios-location-outline"></i> <span>Desenhar mapa</span></button><button class="button button-block button-positive component-holder" type="submit" xattr-fullsize="button-block" xattr-theme="button-positive" ng-click="cronapi.client('js.blockly.MeuLocal.desenharMapa2').run()" data-component="crn-button" id="crn-button-3231"><i class="ion ion-ios-location-outline"></i> <span>Desenhar mapa 2</span></button>
+    <div class="component-holder ng-binding ng-scope" data-component="crn-google-maps" id="crn-google-maps-914361">
+      <div id="map4518" token="AIzaSyCJhsJgO3KsbfpCNQyJ0gGVufZLR3cLBUo" style="height: 100vh;" class=""></div>
+    </div>
+  </ion-content> 
+</ion-view>

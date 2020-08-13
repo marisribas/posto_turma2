@@ -1,0 +1,47 @@
+{
+  "name": "io.cronapp.apps.postoturma2",
+  "displayName": "posto-turma2",
+  "version": "1.0.0",
+  "description": "posto-turma2",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "CronApp IDE",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "cordova-android": "^8.1.0",
+    "cordova-plugin-buildinfo": "^2.0.3",
+    "cordova-plugin-camera": "^4.1.0",
+    "cordova-plugin-contacts": "^3.0.1",
+    "cordova-plugin-cronapp": "git+https://github.com/cronapp/cordova-plugin-cronapp.git#develop",
+    "cordova-plugin-cronapp-decimal-keyboard": "^1.0.1",
+    "cordova-plugin-device": "^2.0.3",
+    "cordova-plugin-device-motion": "^2.0.1",
+    "cordova-plugin-device-orientation": "^2.0.1",
+    "cordova-plugin-dialogs": "^2.0.2",
+    "cordova-plugin-file": "^6.0.2",
+    "cordova-plugin-geolocation": "^4.0.2",
+    "cordova-plugin-inappbrowser": "^4.0.0",
+    "cordova-plugin-ios-camera-permissions": "^1.2.0",
+    "cordova-plugin-network-information": "^2.0.2",
+    "cordova-plugin-splashscreen": "^5.0.4",
+    "cordova-plugin-sqlite-2": "^1.0.6",
+    "cordova-plugin-vibration": "^3.1.1",
+    "cordova-plugin-whitelist": "^1.3.4",
+    "phonegap-plugin-barcodescanner": "^8.1.0"
+  },
+  "devDependencies": {
+    "cordova-plugin-whitelist": "1",
+    "cordova-plugin-cronapp": "https://github.com/cronapp/cordova-plugin-cronapp.git#develop"
+  },
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-cronapp": {}
+    },
+    "platforms": [
+      "android"
+    ]
+  }
+}
